@@ -4,6 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'
 
 const CardRest = (props) => {
+
+  const now = props.location
+  //console.log(now)
+
   return (
 
     <Col sm>
@@ -17,7 +21,10 @@ const CardRest = (props) => {
           <Card.Text>
             local: {props.address}, <br />{props.location}
           </Card.Text>
-          <Link to="Menu"><Button variant="warning">MENU</Button></Link>
+          <Link to={{
+              pathname: '/Menu',
+              data: { now }
+            }}><Button variant="warning">MENU</Button></Link>
         </Card.Body>
       </Card>
     </Col>

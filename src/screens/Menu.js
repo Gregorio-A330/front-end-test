@@ -5,10 +5,15 @@ import Cardapio from '../api/Cardapio';
 
 
 function Menu(props) {
+    
+    const {data} = props.location
+    
+    //console.log(data)
+    
     return(
         <div>
             <Header content={"Menu"} />
-            <Cardapio />
+            <Cardapio params={data}/>
             <Footer />
         </div>
     )

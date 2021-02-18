@@ -6,6 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default class Restaurant extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    const local = this.props
+    console.log(local)
+    this.local = local
+  }
+  
+  
   state = {
     restaurantes: []
   }

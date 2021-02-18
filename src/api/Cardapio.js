@@ -5,7 +5,18 @@ import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 export default class Cardapio extends React.Component {
+
+  constructor(props) {
+    super(props);
+    const local = this.props.params.now
+    console.log(local)
+    this.local = local
+  }
+
+
+
   state = {
     Cardapios: []
   }
@@ -15,7 +26,7 @@ export default class Cardapio extends React.Component {
       .then(res => {
         const Cardapios = res.data;
         this.setState({ Cardapios });
-        console.log(res)
+        //console.log(res)
       })
   }
 
@@ -24,14 +35,25 @@ export default class Cardapio extends React.Component {
       <div>
         <Container>
           <Row>
-            {this.state.Cardapios.map(Cardapio => <CardMenu
-              description={Cardapio.description}
-              price={Cardapio.price}
-              category={Cardapio.category}
-              restaurantId={Cardapio.restaurantId}
-              imageUri={Cardapio.imageUri}
-              prm={Cardapio.id}
-            />)}
+            {this.local === "São Paulo" ? this.state.Cardapios.filter((Cardapios) => Cardapios.restaurantId === 1)
+              .map(Cardapio => <CardMenu
+                description={Cardapio.description}
+                price={Cardapio.price}
+                category={Cardapio.category}
+                restaurantId={Cardapio.restaurantId}
+                imageUri={Cardapio.imageUri}
+                prm={Cardapio.id}
+              />) : this.state.Cardapios.filter((Cardapios) => Cardapios.restaurantId === 2)
+                .map(Cardapio => <CardMenu
+                  description={Cardapio.description}
+                  price={Cardapio.price}
+                  category={Cardapio.category}
+                  restaurantId={Cardapio.restaurantId}
+                  imageUri={Cardapio.imageUri}
+                  prm={Cardapio.id}
+                />)}
+
+
           </Row>
         </Container>
       </div>
