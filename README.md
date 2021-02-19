@@ -1,3 +1,19 @@
+# Projeto finalizado
+Disponivel para vizualização no link: https://warm-journey-19563.herokuapp.com/
+
+## Para instalar e testar no computador
+> Baixe o conteudo e estraia dentro de uma pasta, a seguir use o terminal de sua preferencia e que tenha o Node com NPM instalado no seu dispositivo -> https://nodejs.org/en/ de preferencia a versão LTS.
+
+> Seguindo dentro do terminal e que esteja dentro da pasta do projeto onde apareçam as pastas src e public, este é o diretório que deve ser executado o comando de instalação **npm install**, este comando irá executar a instalação de todos os componentes necessários para fazer o projeto funcionar
+
+> Após a finalização da instalação a pasta node_modules irá aparecer e novamente seguir no terminal e digitar o comando **npm start** para inicializar um servidor localmente e automaticamente uma nova aba "localhost" irá se abrir no navegador e o projeto estára disponivel para usar
+
+### Projeto em ReactJS e a decisão
+> Utilizado o ReactJS por causa de sua facilidade e funcionalidade em criar componentes além de sua manutenção/Debug ser facilitada pela parte de componentização ser separada, logo, quando algum componente não apresenta o devido funcionamento é facil encontrar e corrigir o problema
+> Além de eu estar estudando esta framework e ja ter certa familiaridade
+
+
+
 # Teste vaga de Front-end da STYME
 Este é o teste que nós aqui da STYME usamos para avaliar os candidatos para a vagas de front-end.
 
