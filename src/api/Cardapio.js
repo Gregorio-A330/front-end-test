@@ -5,16 +5,25 @@ import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 export default class Cardapio extends React.Component {
 
   constructor(props) {
     super(props);
-    const local = this.props.params.now
-    console.log(local)
-    this.local = local
-  }
 
+    const teste = this.props.params.now
+    console.log(teste)
+    if (typeof (teste) != "undefined") {
+      // Recebe os parametros do cardRest
+      const local = teste
+      this.local = local
+    } else { 
+      // Recebe os parametros do cardCentered
+      console.log("duas horas tentanto corrigir essa lógica")
+      const local = this.props.params
+      this.local = local
+    }
+
+  }
 
 
   state = {
@@ -26,7 +35,6 @@ export default class Cardapio extends React.Component {
       .then(res => {
         const Cardapios = res.data;
         this.setState({ Cardapios });
-        //console.log(res)
       })
   }
 
@@ -35,7 +43,7 @@ export default class Cardapio extends React.Component {
       <div>
         <Container>
           <Row>
-            {this.local === "São Paulo" ? this.state.Cardapios.filter((Cardapios) => Cardapios.restaurantId === 1)
+            {this.state.Cardapios.filter((Cardapios) => Cardapios.restaurantId === this.local.restaurantId)
               .map(Cardapio => <CardMenu
                 description={Cardapio.description}
                 price={Cardapio.price}
@@ -43,17 +51,7 @@ export default class Cardapio extends React.Component {
                 restaurantId={Cardapio.restaurantId}
                 imageUri={Cardapio.imageUri}
                 prm={Cardapio.id}
-              />) : this.state.Cardapios.filter((Cardapios) => Cardapios.restaurantId === 2)
-                .map(Cardapio => <CardMenu
-                  description={Cardapio.description}
-                  price={Cardapio.price}
-                  category={Cardapio.category}
-                  restaurantId={Cardapio.restaurantId}
-                  imageUri={Cardapio.imageUri}
-                  prm={Cardapio.id}
-                />)}
-
-
+              />)}
           </Row>
         </Container>
       </div>

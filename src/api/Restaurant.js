@@ -38,6 +38,7 @@ export default class Restaurant extends React.Component {
               category={restaurante.category}
               location={restaurante.location}
               imageUri={restaurante.imageUri}
+              restaurantId={restaurante.id}
             />)}
           </Row>
         </Container>
