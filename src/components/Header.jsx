@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchField from 'react-search-field';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css'
@@ -12,9 +11,9 @@ function Header(props) {
     return (
         <header>
             {nome === "Menu" || nome === "Detalhe" ?
-                <Container>
+                <Container >
                     <Link to="/">
-                        <Icon name="arrow alternate circle left outline" size='big' style={{ color: "black", position: "absolute" }} />
+                        <Icon name="arrow alternate circle left outline" size='big' style={{ color: "black", position: "absolute", marginTop: "5px" }} />
                     </Link>
                     <h1>{props.content}</h1>
                 </Container>

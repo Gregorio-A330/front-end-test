@@ -11,18 +11,16 @@ const CardRest = (props) => {
 
   return (
 
-    <Col sm style={{height: "380px"}}>
-        <Card style={{ width: '18rem'}}>
+    <Col sm className="d-flex justify-content-center">
+        <Card style={{ width: '18rem', height: "320px", margin: "10px 0px 20px 0px", padding: "0px"}}>
           <Card.Img variant="top" src={props.imageUri} />
           <Card.Body>
-            <Card.Title>{props.description}</Card.Title>
-
-
+            <Card.Title style={{marginTop: "10px"}}>{props.description}</Card.Title>
             <Link to={{
               pathname: '/Detalhe',
               data: { now }
             }}>
-              <Button variant="warning">Detalhes</Button>
+              <Button style={{marginTop: "10px"}} variant="warning">Detalhes</Button>
             </Link>
           </Card.Body>
         </Card>

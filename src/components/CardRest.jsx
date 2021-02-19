@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom'
 
 const CardRest = (props) => {
 
-  const now = props.location
-  //console.log(now)
+  const now = props
 
   return (
 
-    <Col sm>
-      <Card style={{ width: '18rem' }}>
+    <Col sm className="d-flex justify-content-center" style={{margin: "25px", padding: "0"}}>
+      <Card style={{ width: '20rem', margin: "0px", padding: "0" }}>
         <Card.Img variant="top" src={props.imageUri} />
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
