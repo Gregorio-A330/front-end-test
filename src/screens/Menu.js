@@ -5,10 +5,8 @@ import Cardapio from '../api/Cardapio';
 
 
 function Menu(props) {
-    
+
     const {data} = props.location
-    
-    //console.log(data)
     
     return(
         <div>

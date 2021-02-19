@@ -3,16 +3,13 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import CardCentered from '../components/CardCentered'
 
-
-
 function Detalhe(props) {
 
     const { data } = props.location
 
     return (
         <div>
-            <Header content={"Detalhe"} />
-            {console.log(data.now)}
+            <Header content={"Detail"} />
             <CardCentered
                 category={data.now.category}
                 description={data.now.description}
