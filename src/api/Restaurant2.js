@@ -39,7 +39,7 @@ const Restaurant2 = (props) => {
                     imageUri={restaurante.imageUri}
                     restaurantId={restaurante.id}
                 />)
-                    : data.filter((restaurante) => restaurante.name === input || restaurante.category === input || restaurante.location === input)
+                    : data.filter((restaurante) => restaurante.name.includes(input) || restaurante.category.includes(input) || restaurante.location.includes(input))
                         .map((restaurante) => <CardRest
                             name={restaurante.name}
                             address={restaurante.address}
